@@ -1,0 +1,284 @@
+
+    
+@font-face 
+    font-family: fredokaone
+    src: url(https://fonts.gstatic.com/s/fredokaone/v14/k3kUo8kEI-tA1RRcTZGmTlHGCac.woff2)
+
+$p-lrnj: #F2931F
+$btxt-c: #333
+$ac-bgc: #3f2d41
+$dark-d: #253269
+$light-d: #3da781
+$nav-bgc: rgba(5, 2, 47, 0.9)
+$landingHTreshhold: 11vh
+
+@font-face 
+    font-family: HelveticaNow
+    src: url('../assets/HelveticaNowMTTextMedium_normal_normal.woff')  format('woff')
+@font-face 
+    font-family: HelveticaNowLight
+    src: url('../assets/HelveticaNowText-ExtraLight.woff')  format('woff')
+
+*, body
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+
+
+
+section
+    font-family: HelveticaNow
+    font-size: 12pt
+    min-height: 80vh
+    width: 100%
+    padding-inline: 5vw
+    color: #333
+    h2
+        margin-inline: auto
+        display: flex
+        flex-direction: column
+        text-align: center
+        color: $dark-d
+        small
+            width: 30em
+            margin-inline: auto
+            font-size: 70%
+            font-family: HelveticaNowLight
+            color: #333
+
+    .content
+        max-width: 90vw
+        min-width: 70%
+
+#edicoes
+    // background-color: 
+
+#hero
+    overflow: hidden
+    background-color: $p-lrnj
+    height: calc( 100vh + $landingHTreshhold)
+    .wrapper
+        position: relative
+        width: 86%
+        margin-inline: auto
+    #backbg
+        display: block
+        position: absolute
+        left: 0
+        top: 0
+        width: 100%
+        height: calc(100vh + $landingHTreshhold)
+        opacity: 1
+        background-image: url('../assets/musicantebg.jpeg')
+        background-repeat: no-repeat
+        background-position: 50% 0
+        background-size: cover
+#logo
+    img
+        height: 600px
+        margin-bottom: 2em
+        max-height: 70vh
+        display: block
+        margin-inline: auto
+        
+#backbg
+    clipPath: "circle(0% at 50% 50%)"
+
+#playingIcon
+    z-index: 1000
+    position: absolute
+    top: 30px
+    left: 30px
+    width: 30px
+    aspect-ratio: 1
+
+
+nav
+    border-radius: 15px
+    box-shadow: 2px 5px 4px rgba(100, 100, 100, 0.4)
+    overflow: hidden
+    .toolbar
+        justify-content: center
+    a
+        color: #ddf7ee
+        display: inline
+
+nav 
+    position: sticky
+    background: rgba(23,13,159,0.82)
+    -webkit-backdrop-filter: blur(13px)
+    backdrop-filter: blur(13px)
+    border: 1px solid rgba(23,13,159,0.25)
+    font-weight: 400
+    font-size: 0
+    display: flex
+    padding: 0
+    top: 10px
+    max-width: 1200px
+    margin-inline: auto
+    margin-top: calc( (-1 * ($landingHTreshhold + 5vh)))
+    margin-bottom: 10vh
+    opacity: 0
+    font-family: HelveticaNowLight
+
+  
+nav .item 
+    font-size: 1rem
+    display: inline-block
+    position: relative
+    padding: 0 20px
+    cursor: pointer
+    z-index: 5
+    min-width: 20%
+    height: 60px
+    line-height: 60px
+    text-align: center
+
+
+.dropdown 
+    overflow: hidden
+    list-style: none
+    position: absolute
+    padding: 0
+    width: 100%
+    left: 0
+    top: 62px
+
+.dropdown > div 
+    transform: translate(0, -100%)
+    transition: all 0.5s 0.1s
+    position: relative
+
+
+.dropdown a 
+    display: block
+    padding: 0
+    width: 100%
+    height: 40px
+    line-height: 40px
+    background: $dark-d
+
+
+.dropdown a:hover 
+    background: $light-d
+
+
+.underline 
+    height: 6px
+    background:#b1dbd7
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 20%
+    z-index: 2
+    pointer-events: none
+    transition: 0.35s
+
+
+nav .item:hover > .dropdown > div 
+    transform: translate(0)
+
+
+nav .item:nth-child(1):hover ~ .underline 
+    transform: translate(0, 0)
+
+
+nav .item:nth-child(2):hover ~ .underline 
+    transform: translate(100%, 0)
+
+
+nav .item:nth-child(3):hover ~ .underline 
+    transform: translate(200%, 0)
+
+
+nav .item:nth-child(4):hover ~ .underline 
+    transform: translate(300%, 0)
+
+nav .item:nth-child(5):hover ~ .underline 
+    transform: translate(400%, 0)
+
+
+
+.logo_wrapper
+    position: absolute
+    width: 80%
+    z-index: 3
+    display: flex
+    gap: 4%
+    bottom: 10vh
+    left: 10%
+    opacity: 0
+    display: flex
+    justify-content: space-around
+
+.particles
+    position: absolute
+    width: 100%
+    z-index: 3
+    opacity: 1
+    height: 100%
+    top: 0
+    // opacity: 0
+    img
+        height: 70px
+        position: absolute
+        opacity: 1
+.logos
+    z-index: 2
+    height: 70px
+
+
+.copy
+    position: absolute
+    text-align: left
+    font-family: HelveticaNowLight
+    line-height: 1.7
+    font-size: 13pt
+    color: #222
+
+    &.right
+        right: 0%
+        bottom: -7%
+        color: #020220
+        width: 15em
+        display: flex
+        flex-direction: column
+        gap: 4em
+        h2
+            text-align: right
+    &.left
+        left: -4%
+        top: 10%
+        font-size: 26pt
+        width: 12em
+        color: #28263e
+        text-align: left
+        font-family: HelveticaNow
+        line-height: 1.4em
+        width: 9em
+
+
+.custom-shape-divider-bottom-1698892649 
+    position: absolute
+    bottom: calc(-1 * $landingHTreshhold)
+    left: 0
+    width: 100%
+    overflow: hidden
+    line-height: 0
+    transform: rotate(180deg)
+
+
+
+.custom-shape-divider-bottom-1698892649 svg 
+    position: relative
+    display: block
+    width: calc(165% + 1.3px)
+    height: 100px
+
+
+.custom-shape-divider-bottom-1698892649 .shape-fill 
+    fill: #FFFFFF
+
+
+#about
+    padding-top: 5vh
