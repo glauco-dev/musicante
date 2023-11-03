@@ -1,6 +1,5 @@
 import { AfterViewInit, Component } from '@angular/core';
 import Gsap from 'gsap'
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +9,6 @@ import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 export class AppComponent implements AfterViewInit {
   title = 'musicante';
-  faExternalLinkAlt = faExternalLinkAlt;
 
   ngAfterViewInit(): void {
     var tl = Gsap.timeline()
