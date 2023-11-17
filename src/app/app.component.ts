@@ -16,25 +16,19 @@ export class AppComponent implements AfterViewInit {
   votacoes: Votacao[] = []
 
   constructor(private votacoesServico: VotacoesService){
-    
   }
-
+  
   ngOnInit(): void {
-    this.votacoesServico.getAll().valueChanges().pipe(
-      map(changes =>
-        changes.map(c =>{
-          let v = c;
-          if(v)
-            v.video = v?.video?.replace('watch?v=','embed/');
-          console.log(v)
-          return ({ ...v })
-        })
-      )
-    ).subscribe(data => {
-      this.votacoes = data;
-    });
+    this.votacoesServico.getAll().subscribe(  els => 
+      this.votacoes = els.map(c =>{
+        let v = c;
+        if(v)
+          v.video = v?.video?.replace('watch?v=','embed/');
+        return ({ ...v })
+      })
+    );
   }
-
+  
   
   ngAfterViewInit(): void {
     var tl = Gsap.timeline()

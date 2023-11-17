@@ -1,7 +1,7 @@
-<nz-ribbon nzColor="#35A600" [nzText]="data.likes + ' likes'" nzStandalone></nz-ribbon>
-<iframe *ngIf="data.video" [src]="data.video | safe" class="preview" title="YouTube video player" frameborder="0"
+<!-- <iframe *ngIf="data.video" [src]="data.video | safe" class="preview" title="YouTube video player" frameborder="0"
     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen></iframe>
+    allowfullscreen></iframe> -->
+<img *ngIf="data.video" [src]="data.video | safe" alt="">
 <div  nz-tooltip [nzTooltipTitle]="'Click duplamente para votar'" (dblclick)="vote()" class="name">{{data.nome}}</div>
 <div class="description">
     {{data.likes}}

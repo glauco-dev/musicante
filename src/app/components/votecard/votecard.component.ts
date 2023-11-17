@@ -11,6 +11,8 @@ import { VotacoesService } from '../../services/votacoes.service';
 export class VotecardComponent {
   @Input() data!: Votacao; 
   constructor(private api: VotacoesService) {
+    console.log(this.data);
+    
   }
 
   vote(){
