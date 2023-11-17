@@ -12,9 +12,8 @@ export class VotacoesService {
   votacoes: Observable<Votacao[]>;
   constructor(private db: AngularFireDatabase) {
     this.votacoes = new Observable<Votacao[]>(observer => {
-      db.list(this.dbPath).query.once('value', snap => {
-        console.log(snap.val());
-        observer.next(snap.val())
+      db.list(this.dbPath).snapshotChanges().subscribe( snap => {
+        observer.next(snap)
       })
     })
   }
