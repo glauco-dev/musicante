@@ -12,46 +12,34 @@
       <img src="../assets/Musicante logo-01.png" alt="">
     </div>
 
-    <h3 class="copy left">
-      <h1>
-        Festival de Música Estudantil do Sudoeste Baiano
-      </h1>
-      
-    </h3>
 
-    
+
+
 
     <h3 class="copy right">
       <h2>
         Promovido pelo Núcleo Territorial de Educação (NTE20)
       </h2>
-      <small>
-
-        Torne-se parte do júri virtual e ajude a coroar os vencedores do Festival Musicante 2023.
-      </small>
     </h3>
-    
-  </div>
-  <div class="logo_wrapper">
-      <img src="../assets/logos/bh-semfome.png" alt="" class="logos"><img src="../assets/logos/fliconquista.png" alt=""
-        class="logos"><img src="../assets/logos/gv-bahia.png" alt="" class="logos"><img src="../assets/logos/henet.png"
-        alt="" class="logos"><img src="../assets/logos/operakata.png" alt="" class="logos">
-    </div>
 
-    
+  </div>
+
+
+
 </section>
 
 <div class="custom-shape-divider-bottom-1698892649">
   <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+    <path
+      d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+      class="shape-fill"></path>
   </svg>
 </div>
 <nav id="nav" class="toolbar flex flex-row drop-shadow-md">
-  <a class="item">O Festival</a>
-  <a class="item">Edital 2023</a>
-  <a class="item">Inscrições prorrogadas</a>
-  <a class="item">Edições anteriores</a>
-  <a class="item">Contato</a>
+  <a href="#about" class="item">O Festival</a>
+  <a href="../assets/Edital Musicante Sudoeste 2023-3.pdf" target="_blank" class="item">Edital 2023</a>
+  <a href="#edicoes" class="item">Edições anteriores</a>
+  <!-- <a class="item">Contato</a> -->
   <!-- 
     <!- Caso tenha um link dropdown depois
     <div class="item">
@@ -68,16 +56,96 @@
   <div class="underline"></div>
 </nav>
 <section id="about">
-  <h2>
-    MUSICANTE 2023  
-    <small>
-      Transformando acordes em oportunidades, o nosso projeto educacional é a harmonia que inspira o futuro da música e da aprendizagem
-    </small>
+  <h2 id="ofestival">
+    ARTE E EDUCAÇÃO!
   </h2>
+
   <div class="wrapper">
-    
+    <div id="projeto1" class="topic">
+      <img src="../assets/composition-10-1536x939(1).png" alt="">
+
+      <span nz-typography>
+        <markdown ngPreserveWhitespaces>
+          O Musicante tem como objetivo fomentar a criação artística e
+          cultural dos nossos estudantes por meio da música
+
+
+          Trazer visibilidade para sua produção musical
+
+
+          Proporcionar a confluência de tantos talentos que nossa Rede
+          abraça, além de criar um espaço para difundir e compartilhar as culturas e identidades do Sudoeste Baiano.
+
+        </markdown>
+      </span>
+    </div>
+
+    <div id="projeto2" class="topic">
+      <h2>
+        Premiação
+      </h2>
+
+      <div class="sessionTopic">
+        <img class="cover" src="../assets/first-position_9011516.png">
+        <div class="content">
+          <div class="title">
+            1º lugar
+          </div>
+          <div class="desc">
+            R$ 3 mil (três mil reais)!
+          </div>
+        </div>
+      </div>
+
+      <div class="sessionTopic">
+        <div class="content">
+          <div class="title">2º lugar</div>
+          <div class="desc">
+            R$ 2 mil (dois mil reais)!
+          </div>
+        </div>
+        <img class="cover" src="../assets/trophy-2nd.png">
+      </div>
+      <div class="sessionTopic">
+        <img class="cover" src="../assets/trophy-3.png">
+        <div class="content">
+          <div class="title">3º lugar</div>
+          <div class="desc">
+            R$ 1.500,00 (mil e quinhentos reais)!
+          </div>
+        </div>
+      </div>
+
+
+      <div class="sessionTopic">
+        <div class="content">
+            <div class="title">
+              MELHOR INTÉRPRETE
+            </div>
+
+            <div class="desc">
+              R$ 1.500,00 (mil e quinhentos reais)!
+          </div>
+        </div>
+        <img class="cover" src="../assets/most-voted.png">
+      </div>
+      
+      <div class="sessionTopic">
+        <img class="cover" src="../assets/best-interpreter.png">
+        <div class="content">
+          <div class="title">
+            MELHOR LETRA
+          </div>
+
+          <div class="desc">
+            R$ 1.500,00 (mil e quinhentos reais)!
+        </div>
+        </div>
+      </div>
+
+    </div>
   </div>
-</section>
+
 <section id="edicoes">
   <h2>
     Edições anteriores
@@ -85,8 +153,75 @@
       Abaixo, as edições já realizadas do Musicante
     </small>
   </h2>
-  <div class="wrapper"></div>
+  <div class="wrapper">
+
+    <app-archv>
+      <ng-template #cover>
+        <iframe [src]="'https://www.youtube.com/embed/9qhNULloLyc?si=U-mgBGKaysw9yMN9' | safe"
+          title="YouTube video player"></iframe>
+      </ng-template>
+      <ng-template #title>
+        <markdown>
+          ## Edição 2021
+        </markdown>
+      </ng-template>
+      <ng-template #desc>
+        <markdown ngPreserveWhitespaces>
+
+          ### O Musicante Sudoeste 2021 foi sucesso!
+
+          Que seja a primeira de muitas edições...
+          - 12 a 26/nov Período de inscrições
+          - 29/nov Resultado da análise documental
+          - 03/dez Divulgação das músicas finalistas
+          - 03 a 08/dez Votação popular pelo site
+          - 09/dez Show ao vivo (grande final)
+
+        </markdown>
+      </ng-template>
+    </app-archv>
+
+    <app-archv>
+      <ng-template #cover>
+        <iframe [src]="'https://www.youtube.com/embed/03IM8LcuNcU?si=qS9LzPYaJ4Q8vAmB' | safe"
+          title="YouTube video player"></iframe>
+      </ng-template>
+      <ng-template #title>
+        <markdown>
+          ## Edição 2022
+        </markdown>
+      </ng-template>
+      <ng-template #desc>
+        <markdown ngPreserveWhitespaces>
+
+          ### O Musicante Sudoeste 2022
+          Gravado em 07 de dezembro de 2022, no Centro de Cultura Camillo de Jesus Lima, de Vitória da Conquista.
+          Realização: Núcleo Territorial de Educação - NTE20, Secretaria Estadual de Educação, Governo da Bahia.
+
+        </markdown>
+      </ng-template>
+    </app-archv>
+
+  </div>
 </section>
-<section id="contato">
-  <div class="wrapper"></div>
+
+<section id="votacao">
+  <h2>Votação de candidatos 2023</h2>
+  <div class="wrapper">
+    <app-votecard *ngFor="let candidato of votacoes; index as i" [data]="candidato"></app-votecard>
+  </div>
 </section>
+
+<div class="rodape">
+  <div class="logo_wrapper">
+    <img src="../assets/logos/henet.png" alt="" class="logos">
+    <img src="../assets/logos/operakata.png" alt="" class="logos">
+    <img src="../assets/Marca WV(1).png" class="logos">
+    <img src="../assets/Marca ZV.png" alt="" class="logos">
+    <img src="../assets/logos/bh-semfome.png" alt="" class="logos">
+    <img src="../assets/logos/gv-bahia.png" alt="" class="logos">
+  </div>
+  <div class="conteudo-rodape">
+    <p>&copy; 2023 Imboré</p>
+  </div>
+</div>

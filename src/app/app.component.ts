@@ -1,5 +1,8 @@
 import { AfterViewInit, Component } from '@angular/core';
-import Gsap from 'gsap'
+import Gsap from 'gsap';
+import { Votacao } from './models/votacao.model';
+import { VotacoesService } from './services/votacoes.service';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +13,29 @@ import Gsap from 'gsap'
 export class AppComponent implements AfterViewInit {
   title = 'musicante';
 
+  votacoes: Votacao[] = []
+
+  constructor(private votacoesServico: VotacoesService){
+    
+  }
+
+  ngOnInit(): void {
+    this.votacoesServico.getAll().valueChanges().pipe(
+      map(changes =>
+        changes.map(c =>{
+          let v = c;
+          if(v)
+            v.video = v?.video?.replace('watch?v=','embed/');
+          console.log(v)
+          return ({ ...v })
+        })
+      )
+    ).subscribe(data => {
+      this.votacoes = data;
+    });
+  }
+
+  
   ngAfterViewInit(): void {
     var tl = Gsap.timeline()
     tl
@@ -43,60 +69,5 @@ export class AppComponent implements AfterViewInit {
       .to('h3.copy.left', { opacity: 1, y: 0 ,duration: 2}, 4)
       .to('h3.copy.right', { opacity: 1, y: 0, duration: 2 },5)
 
-    const commonAnimProps = {
-      scale: 1.2,
-      opacity: 0,
-      duration: 2,
-      stagger: {
-        each: 1,
-        repeat: -1,
-      }
-    };
-
-    const particlesAnimations = [
-      {
-        ...commonAnimProps,
-        scale: 1.2,
-        y: -10,
-        rotate: -15,
-        x: -10,
-      },
-      {
-        // ...commonAnimProps
-      },
-      {...commonAnimProps},
-      {...commonAnimProps},
-      {
-        ...commonAnimProps,
-        // scale: 1.2,
-        // rotateX: 0,
-        // rotateY:180,
-        // rotateZ: 60,
-        // translate:40,
-        // translateY:-40,
-        // translateX:-20,
-        // y: -16,
-        // x: 15,
-        rotate: 20
-      },
-      {
-        // ...commonAnimProps,
-        // scale: 1.2,
-        // y: -16,
-        // x: 15,
-        // rotate: 20
-      },
-      {
-        ...commonAnimProps,
-        scale: 1.2,
-        y: -21,
-        x: 33,
-        rotate: 13
-      }
-    ]
-
-    // particlesAnimations.forEach((anim, i) => {
-    //   tl.to(lgptcls[i], anim, 5)
-    // })
   }
 }

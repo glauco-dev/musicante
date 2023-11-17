@@ -1,0 +1,51 @@
+:host 
+  width: 400px
+  min-width: 400px
+  max-width: 100%
+  background-color: #ececec
+  padding: 0.2rem
+  transition: all 0.3s
+  border-radius: 1rem
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2)
+  cursor: crosshair
+  overflow: clip
+  display: flex
+  aspect-ratio: 16/9
+  flex-direction: column
+  min-height: 50vh
+  gap: 1em
+  nz-ribbon
+    position: absolute
+    margin-left: 393px
+  .wrapper
+    padding: 0
+  iframe
+    flex: 1
+  user-select: none
+  -moz-user-select: none
+  -webkit-user-select: none
+  -ms-user-select: none
+    
+  &:active
+    transform: scale(1.05)
+
+  
+.preview 
+  height: 2rem
+  @supports not (overflow-clip-margin: content-box) 
+    border-radius: 0.8rem 0.8rem 0 0
+  
+
+
+.name 
+  padding: 0.1rem
+  text-align: center
+  text-transform: uppercase
+  letter-spacing: 5px
+
+
+.description 
+  font-size: 0.24rem
+  line-height: 1.4
+  padding: 0.1rem
+  padding-bottom: 0.3rem

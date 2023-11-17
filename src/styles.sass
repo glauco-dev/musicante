@@ -1,3 +1,11 @@
+$p-lrnj: #f7c71d
+$btxt-c: #333
+$ac-bgc: #3f2d41
+$dark-d: #253269
+$light-d: #3da781
+$nav-bgc: rgba(5, 2, 47, 0.9)
+$landingHTreshhold: 14vh
+
 body
     padding: 0
     margin: 0
@@ -6,3 +14,348 @@ body
     background-attachment: fixed
     background-size: 33% 
     background-repeat: repeat
+
+app-root
+    display: flex
+    flex-direction: column
+
+#projeto2
+    margin-bottom: 6em
+    .ant-card-meta-description
+        font-size: 20pt !important
+        font-family: HelveticaNowLight
+    .ant-card-cover
+        height: 0px !important
+        img
+           z-index: 10 !important
+
+.rodape 
+    background-color: #f7c11d7d
+    color: #fff
+    padding: 10px 0
+    text-align: center
+    position: absolute
+    width: 100%
+    left: 0%
+
+.conteudo-rodape 
+  max-width: 960px
+  margin: 0 auto
+
+
+nav
+    border-radius: 15px
+    box-shadow: 2px 5px 4px rgba(100, 100, 100, 0.4)
+    overflow: hidden
+    .toolbar
+        justify-content: center
+    a
+        color: #ddf7ee
+        display: inline
+
+nav 
+    position: sticky
+    background: rgba(23,13,159,0.82)
+    -webkit-backdrop-filter: blur(13px)
+    backdrop-filter: blur(13px)
+    border: 1px solid rgba(23,13,159,0.25)
+    font-weight: 400
+    font-size: 0
+    display: flex
+    padding: 0
+    z-index: 100
+    top: 10px
+    max-width: 1200px
+    margin-inline: auto
+    margin-top: calc( (-1 * ($landingHTreshhold + 5vh)))
+    margin-bottom: 10vh
+    opacity: 0
+    font-family: HelveticaNowLight
+
+  
+nav .item 
+    font-size: 1rem
+    display: inline-block
+    position: relative
+    padding: 0 20px
+    cursor: pointer
+    z-index: 5
+    min-width: 20%
+    height: 60px
+    line-height: 60px
+    text-align: center
+
+
+.dropdown 
+    overflow: hidden
+    list-style: none
+    position: absolute
+    padding: 0
+    width: 100%
+    left: 0
+    top: 62px
+
+.dropdown > div 
+    transform: translate(0, -100%)
+    transition: all 0.5s 0.1s
+    position: relative
+
+
+.dropdown a 
+    display: block
+    padding: 0
+    width: 100%
+    height: 40px
+    line-height: 40px
+    background: $dark-d
+
+
+.dropdown a:hover 
+    background: $light-d
+
+
+.underline 
+    height: 6px
+    background:#b1dbd7
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 33%
+    z-index: 2
+    pointer-events: none
+    transition: 0.35s
+nav .item
+    width: 33%
+
+nav .item:hover > .dropdown > div 
+    transform: translate(0)
+
+
+nav .item:nth-child(1):hover ~ .underline 
+    transform: translate(0, 0)
+
+
+nav .item:nth-child(2):hover ~ .underline 
+    transform: translate(100%, 0)
+
+
+nav .item:nth-child(3):hover ~ .underline 
+    transform: translate(200%, 0)
+
+
+
+
+.logo_wrapper
+    display: flex
+    justify-content: space-around
+    padding-inline: 4em
+    margin-bottom: 1em
+    padding-top: 2em
+    gap: 1em
+    flex-wrap: wrap
+
+.particles
+    position: absolute
+    width: 100%
+    z-index: 3
+    opacity: 1
+    height: 100%
+    top: 0
+    // opacity: 0
+    img
+        height: 70px
+        position: absolute
+        opacity: 1
+.logos
+    z-index: 2
+    height: 70px
+
+
+.copy
+    position: absolute
+    text-align: left
+    font-family: HelveticaNowLight
+    line-height: 1.7
+    font-size: 13pt
+    color: #222
+
+    &.right
+        right: 0%
+        bottom: 10%
+        color: #020220
+        width: 15em
+        display: flex
+        flex-direction: column
+        gap: 4em
+        h2
+            text-align: right
+    &.left
+        left: -4%
+        top: 10%
+        font-size: 26pt
+        width: 12em
+        color: #28263e
+        text-align: left
+        font-family: HelveticaNow
+        line-height: 1.4em
+        width: 9em
+
+
+.custom-shape-divider-bottom-1698892649 
+    position: absolute
+    bottom: calc(-1 * $landingHTreshhold)
+    left: 0
+    width: 100%
+    overflow: hidden
+    line-height: 0
+    transform: rotate(180deg)
+
+
+
+.custom-shape-divider-bottom-1698892649 svg 
+    position: relative
+    display: block
+    width: calc(165% + 1.3px)
+    height: 100px
+
+
+.custom-shape-divider-bottom-1698892649 .shape-fill 
+    fill: #FFFFFF
+
+#about
+    .wrapper
+        #projeto1
+            max-width: 100vh
+            text-align: center
+            transform: translateX(0vw)
+            position: relative
+            display: flex
+            flex-direction: column
+            font-size: 20pt
+            margin-left: auto
+            text-align: right
+            width: 26em
+            h3
+                font-weight: bold
+                color: #253269
+                font-family: HelveticaNow
+            img
+                height: 19em
+                z-index: -10
+                position: absolute
+                left: -60vw
+                top: -3em
+
+            &.left
+                margin-right: auto
+                margin-left: 0px
+                text-align: left
+                margin-top: 6em
+                font-size: 13pt
+
+#edicoes
+    scroll-margin-top: -8em
+    .wrapper
+        flex-direction: row
+        display: flex
+    iframe
+        height: 400px
+.wrapper
+    padding: 1em
+    gap: 1em
+    font-family: HelveticaNowLight
+    font-size: 12pt
+    
+
+#about
+    padding-top: 5vh
+
+#projeto2
+
+    margin-top: 4em
+    color: $dark-d !important
+    img
+        height: auto !important
+        max-height: 44vh
+        margin: auto
+        margin-inline: 4em
+
+.sessionTopic
+    margin-top: 4rem
+    margin-bottom: 10rem
+    display: flex
+    height: 40vh
+    .content
+        width: 60vw
+        padding: 2em
+        border-radius: 10px
+        background-color: rgba(63, 55, 175, 0.9803921569)
+        margin-inline: 2em
+        height: 65%
+        color: whitesmoke
+        font-size: 16pt
+        font-family: HelveticaNowLight
+        line-height: 1.7rem
+        margin-top: 10%
+        min-width: auto !important
+        text-align: center
+        align-content: center
+        align-items: center
+        display: flex
+        flex-direction: column
+        justify-content: space-around
+
+@media (max-width: 500px)
+    #hero
+        min-height: 50vh
+        height: auto !important
+        .wrapper
+            padding: 1% !important
+
+        img
+            width: 100%
+            height: auto !important
+            position: relative
+
+    #about .wrapper #projeto1 img
+        opacity: 0.1
+    #projeto1
+        width: 100% !important
+    #projeto2 h2
+        margin-bottom: -25%
+    nav
+        opacity: 1
+        top: 10px
+        position: fixed
+
+    #projeto1
+        max-width: 100%
+
+    .sessionTopic
+        height: auto !important
+        width: 100%
+        display: flex
+        flex-direction: column-reverse
+        .content
+            margin-inline: 0px !important
+            width: 100%
+            max-width: 90vw
+        .cover
+            position: absolute
+            max-height: 20vh !important
+            right: -20%
+            max-width: 35%
+    #edicoes
+        h2
+            small
+                display: inherit
+
+        .wrapper
+            display: block
+    .copy.right
+        position: relative
+    #projeto2 h2
+        margin-bottom: -25%
+        margin: auto
+    #projeto2 h2
+        margin-bottom: -25%   

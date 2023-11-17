@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CrduiComponent } from './crdui.component';
+import { DescCardComponent } from './desc-card.component';
 
-describe('CrduiComponent', () => {
-  let component: CrduiComponent;
-  let fixture: ComponentFixture<CrduiComponent>;
+describe('DescCardComponent', () => {
+  let component: DescCardComponent;
+  let fixture: ComponentFixture<DescCardComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CrduiComponent]
+      declarations: [DescCardComponent]
     });
-    fixture = TestBed.createComponent(CrduiComponent);
+    fixture = TestBed.createComponent(DescCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
