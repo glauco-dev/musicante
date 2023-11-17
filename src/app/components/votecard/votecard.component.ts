@@ -11,14 +11,12 @@ import { VotacoesService } from '../../services/votacoes.service';
 export class VotecardComponent {
   @Input() data!: Votacao; 
   constructor(private api: VotacoesService) {
-    console.log(this.data);
-    
   }
 
   vote(){
-    console.log("!vote:", this.data.key,  this.data.likes)
-    if(this.data.key && this.data.likes)
-      this.api.update(this.data.key.toString(), {likes: this.data.likes+1})
+    console.log("!vote:", this.data.key,  this.data.votos)
+    if(this.data.votos && this.data.key)
+      this.api.update(this.data.key, {votos: this.data.votos+1})
       .then((s) => {
         console.log(s)
       })

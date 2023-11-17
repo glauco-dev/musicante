@@ -1,6 +1,10 @@
 export class Votacao {
-    key?: string | null;
-    nome?: string;
-    video?: string;
-    likes?: number;
+    key?:string;
+    Cidade?:string;
+    Colegio?:string;
+    Musica?:string;
+    Nome?:string;
+    Video?:string;
+    Capa?:string;
+    votos?:number;
 }

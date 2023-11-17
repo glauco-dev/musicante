@@ -19,14 +19,23 @@ export class AppComponent implements AfterViewInit {
   }
   
   ngOnInit(): void {
-    this.votacoesServico.getAll().subscribe(  els => 
-      this.votacoes = els.map(c =>{
-        let v = c;
-        if(v)
-          v.video = v?.video?.replace('watch?v=','embed/');
-        return ({ ...v })
-      })
-    );
+    this.votacoesServico.getAll().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>{
+          let v = c.payload.val();
+          if(v){
+            v.Video = v?.Video?.replace('watch?v=','embed/');
+            v.Capa = "assets/FOTOS/"+v.Nome?.toUpperCase()+".jpeg";
+          }
+          console.log(v);
+          
+          return ({ key:c.key, ...v } as Votacao)
+        })
+      )
+    )
+    .subscribe(data => {
+      this.votacoes = data;
+    });
   }
   
   

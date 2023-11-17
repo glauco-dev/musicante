@@ -1,8 +1,17 @@
-<!-- <iframe *ngIf="data.video" [src]="data.video | safe" class="preview" title="YouTube video player" frameborder="0"
-    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen></iframe> -->
-<img *ngIf="data.video" [src]="data.video | safe" alt="">
-<div  nz-tooltip [nzTooltipTitle]="'Click duplamente para votar'" (dblclick)="vote()" class="name">{{data.nome}}</div>
+
+<img *ngIf="data.Capa" [src]="data.Capa | safe" alt="">
+
+<div  nz-tooltip [nzTooltipTitle]="'Click duplamente para votar'" (dblclick)="vote()" class="name">{{data.Nome}}</div>
 <div class="description">
-    {{data.likes}}
+    <h3>
+        <a target="_blank" [href]="data.Video">{{data.Musica}}</a>
+    </h3>
+    <span>
+
+        {{data.Colegio}}
+    </span>
+    <span>
+
+        {{data.Cidade}}
+    </span>
 </div>

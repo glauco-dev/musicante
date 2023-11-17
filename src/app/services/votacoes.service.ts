@@ -1,25 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Votacao } from "../models/votacao.model";
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class VotacoesService {
+  votacoes: AngularFireList<Votacao>; 
   private dbPath = '/votacoes';
-  votacoes: Observable<Votacao[]>;
   constructor(private db: AngularFireDatabase) {
-    this.votacoes = new Observable<Votacao[]>(observer => {
-      db.list(this.dbPath).snapshotChanges().subscribe( snap => {
-        observer.next(snap)
-      })
-    })
+    this.votacoes = db.list(this.dbPath);
   }
 
-  getAll(){
-    return this.votacoes
+  getAll(): AngularFireList<Votacao> {
+    return this.votacoes;
   }
 
   update(key: string, value: any): Promise<void> {

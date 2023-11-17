@@ -39,6 +39,8 @@
   <a href="#about" class="item">O Festival</a>
   <a href="../assets/Edital Musicante Sudoeste 2023-3.pdf" target="_blank" class="item">Edital 2023</a>
   <a href="#edicoes" class="item">Edições anteriores</a>
+  <a href="#votacao" class="item">Votação popular</a>
+  
   <!-- <a class="item">Contato</a> -->
   <!-- 
     <!- Caso tenha um link dropdown depois
@@ -206,7 +208,7 @@
 </section>
 
 <section id="votacao">
-  <h2>Votação de candidatos 2023</h2>
+  <h2>Votação popular</h2>
   <div class="wrapper">
     <app-votecard *ngFor="let candidato of votacoes; index as i" [data]="candidato"></app-votecard>
   </div>
