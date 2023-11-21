@@ -1,7 +1,7 @@
 
-<img *ngIf="data.Capa" [src]="data.Capa | safe" alt="">
-
-<div  nz-tooltip [nzTooltipTitle]="'Click duplamente para votar'" (dblclick)="vote()" class="name">{{data.Nome}}</div>
+<img *ngIf="data.Capa && data.Video" (click)="open(data.Video,'_blank')" [src]="data.Capa | safe" alt="">
+<!-- <span class="plus">+1</span> -->
+<div class="name">{{data.Nome}}</div>
 <div class="description">
     <h3>
         <a target="_blank" [href]="data.Video">{{data.Musica}}</a>
@@ -15,3 +15,7 @@
         {{data.Cidade}}
     </span>
 </div>
+<a *ngIf="this.canVote" class="voteButton" (click)="vote($event)">
+    Vote
+</a>
+<span class="voteButton" *ngIf="!this.canVote"></span>

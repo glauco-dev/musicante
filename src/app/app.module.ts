@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import Gsap from 'gsap'
+import { NzNotificationModule } from 'ng-zorro-antd/notification';
 import CSSRulePlugin from "gsap/CSSRulePlugin";
 import { MarkdownModule } from 'ngx-markdown';
 import { ArchvComponent } from './archv/archv.component';
@@ -52,6 +53,7 @@ export class SafePipe implements PipeTransform {
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
+    NzNotificationModule,
     MarkdownModule.forRoot(),
     FormsModule,
     HttpClientModule,

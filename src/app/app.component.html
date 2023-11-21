@@ -1,8 +1,5 @@
 <section id="hero">
 
-  <audio preload="auto" autoplay="true" id="landingSound">
-    <source src="../assets/aplausos.mp3" preload="auto" type="audio/mp3">
-  </audio>
 
   <div id="backbg"></div>
   <img id="playingIcon" src="../assets/sound.png" alt="">
@@ -37,9 +34,9 @@
 </div>
 <nav id="nav" class="toolbar flex flex-row drop-shadow-md">
   <a href="#about" class="item">O Festival</a>
+  <a href="#votacao" class="item">Votação popular</a>
   <a href="../assets/Edital Musicante Sudoeste 2023-3.pdf" target="_blank" class="item">Edital 2023</a>
   <a href="#edicoes" class="item">Edições anteriores</a>
-  <a href="#votacao" class="item">Votação popular</a>
   
   <!-- <a class="item">Contato</a> -->
   <!-- 
@@ -57,6 +54,14 @@
 
   <div class="underline"></div>
 </nav>
+<h2 id="countdown" *ngIf="this.canVote">A VOTAÇÃO POPULAR ACABA EM <span>{{this.hours}}:{{this.minutes}}:{{this.seconds}}</span> HORAS</h2>
+<h2 id="countdown" *ngIf="!this.canVote">A VOTAÇÃO POPULAR FOI ENCERRADA AS <span>22/11 AS 12:00AM</span> HORAS</h2>
+<section id="votacao">
+  <h2>Votação popular</h2>
+  <div class="wrapper">
+    <app-votecard *ngFor="let candidato of votacoes; index as i" [data]="candidato"></app-votecard>
+  </div>
+</section>
 <section id="about">
   <h2 id="ofestival">
     ARTE E EDUCAÇÃO!
@@ -207,12 +212,7 @@
   </div>
 </section>
 
-<section id="votacao">
-  <h2>Votação popular</h2>
-  <div class="wrapper">
-    <app-votecard *ngFor="let candidato of votacoes; index as i" [data]="candidato"></app-votecard>
-  </div>
-</section>
+
 
 <div class="rodape">
   <div class="logo_wrapper">

@@ -18,3 +18,9 @@ export const environment = {
     }
   };
   
+export const countDownLimit = new Date("Nov 22, 2023 12:00:00")
+export const canVote = ():boolean => {
+    var now = new Date().getTime();
+    let limit = countDownLimit.getTime();
+    return now < limit
+}

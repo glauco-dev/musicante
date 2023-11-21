@@ -5,6 +5,8 @@ $dark-d: #253269
 $light-d: #3da781
 $nav-bgc: rgba(5, 2, 47, 0.9)
 $landingHTreshhold: 14vh
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400&family=Libre+Baskerville:ital@0;1&family=Roboto:wght@100;300&display=swap')
+
 
 body
     padding: 0
@@ -308,7 +310,6 @@ nav .item:nth-child(3):hover ~ .underline
 @media (max-width: 500px)
     #hero
         min-height: 50vh
-        height: auto !important
         .wrapper
             padding: 1% !important
 
@@ -318,7 +319,7 @@ nav .item:nth-child(3):hover ~ .underline
             position: relative
 
     #about .wrapper #projeto1 img
-        opacity: 0.1
+        display: none
     #projeto1
         width: 100% !important
     #projeto2 h2
@@ -349,6 +350,7 @@ nav .item:nth-child(3):hover ~ .underline
         h2
             small
                 display: inherit
+                max-width: 100%
 
         .wrapper
             display: block

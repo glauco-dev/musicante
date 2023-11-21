@@ -1,8 +1,8 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import Gsap from 'gsap';
 import { Votacao } from './models/votacao.model';
 import { VotacoesService } from './services/votacoes.service';
-import { map } from 'rxjs';
+import { canVote, countDownLimit } from './enviroments/environment';
 
 @Component({
   selector: 'app-root',
@@ -14,28 +14,44 @@ export class AppComponent implements AfterViewInit {
   title = 'musicante';
 
   votacoes: Votacao[] = []
+  countDownDate = countDownLimit.getTime().toLocaleString('en-US', {
+    minimumIntegerDigits: 2,
+    useGrouping: false
+  }); 
+  days = 0
+  hours = 0
+  minutes = 0
+  seconds = 0
+  canVote = true
 
   constructor(private votacoesServico: VotacoesService){
+    this.canVote = canVote()
+    var viewCountDownfn = setInterval(() => {
+      var now = new Date().getTime();
+      let timeleft = now - parseInt(this.countDownDate);
+          
+      this.hours = -1 * Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      this.minutes = -1 * Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+      this.seconds = -1 * Math.floor((timeleft % (1000 * 60)) / 1000);
+
+    }, 1000)
   }
   
+
   ngOnInit(): void {
-    this.votacoesServico.getAll().snapshotChanges().pipe(
-      map(changes =>
-        changes.map(c =>{
-          let v = c.payload.val();
+    // data handling
+    this.votacoesServico.getAll().query.once('value').then(
+      (changes) => {
+        this.votacoes = changes.val().map((v:Votacao, index:number) =>{
           if(v){
-            v.Video = v?.Video?.replace('watch?v=','embed/');
+            v.key = index.toString();
             v.Capa = "assets/FOTOS/"+v.Nome?.toUpperCase()+".jpeg";
           }
-          console.log(v);
-          
-          return ({ key:c.key, ...v } as Votacao)
+          console.log(v)
+          return (v)
         })
-      )
+      }
     )
-    .subscribe(data => {
-      this.votacoes = data;
-    });
   }
   
   

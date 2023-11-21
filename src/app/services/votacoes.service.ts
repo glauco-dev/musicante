@@ -19,6 +19,7 @@ export class VotacoesService {
   }
 
   update(key: string, value: any): Promise<void> {
-    return this.db.list(this.dbPath).update(key, value);
+    console.log(key,value)
+    return this.db.list(this.dbPath).update(key, value)
   }
 }

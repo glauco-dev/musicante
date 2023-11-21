@@ -1,25 +1,63 @@
+@keyframes pumping 
+  0%
+    background-color: transparent
+    text-shadow: 1px 1px 0px black
+  15%
+    background-color: rgba(23, 13, 159, 0.499)
+    text-shadow: 1px 1px 8px black
+  100%
+    background-color: transparent
+    text-shadow: 1px 1px 0px black
+  
 :host 
-  width: 400px
-  min-width: 400px
-  max-width: 100%
+  max-width: 85vw
   background-color: #ececec
   padding: 0.2rem
   transition: all 0.3s
   border-radius: 1rem
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2)
+  box-shadow: 0 0 12px rgb(0 0 0 / 20%)
   cursor: crosshair
   overflow: clip
-  display: flex
+  min-height: 455px
   aspect-ratio: 16/9
   position: relative
   flex-direction: column
-  min-height: 50vh
+  margin-bottom: 2em
   gap: 2em
+  display: flex
+  max-width: 400px
+  user-select: none
+  -moz-user-select: none
+  -webkit-user-select: none
+  -ms-user-select: none
+  @media (max-width:400px) 
+    padding-bottom: 15%
+    max-width: 100%
+  max-width: 400px
+  @media (max-width: 400px) 
+    max-width: 100%
+  
+
+  &.pump
+    animation-name: pumping
+    animation-duration: 0.55s
+    animation-iteration-count: 1
+  .plus
+    position: absolute
+    top: 1em
+    font-size: 21px
+    color: green
+    font-family: Arial
+    right: 0em
+    transition: all 0.3s
+  
+
   nz-ribbon
     position: absolute
     margin-left: 393px
   .wrapper
     padding: 0
+    
   iframe
     flex: 1
   user-select: none
@@ -30,8 +68,11 @@
   img
     position: relative
     object-fit: contain
-    height: 75%
-    margin-top: 15%
+    height: 55%
+    margin-top: 3.6em 
+    max-width: 100%
+    @media (max-width:400px)
+       max-height: 50%
   .desc
     padding: 1em
   .name
@@ -83,4 +124,19 @@
   flex-direction: column
   text-align: center
   margin-top: -2em
+  font-family: 'Roboto', sans-serif
 
+a.voteButton
+  color: #b09329
+  text-transform: uppercase
+  cursor: pointer
+  margin-inline: auto
+  height: 1.6em
+  bottom: 0.5em
+  height: 2em
+  :active
+    color: #dbc05d
+  :visited
+    color: #6a5b26
+
+  
